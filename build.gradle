@@ -6,16 +6,16 @@ plugins {
 }
 
 group 'jordi.Sanchez'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 repositories {
     mavenCentral()
     maven {
-        url 'https://mymavenrepo.com/repo/9szUQq2o5j1GabY3x4qm/'
+        url myMavenRepoReadUrl
 
         credentials {
-            username 'myMavenRepo'
-            password '1234'
+            username myMavenRepoReadUsername
+            password myMavenRepoReadPassword
         }
     }
 }
@@ -42,7 +42,7 @@ javafx {
 }
 
 dependencies {
-    implementation 'ilyas.kial:Fitxers:3.1'
+    implementation 'jordi.Sanchez:Fitxers:3.0'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

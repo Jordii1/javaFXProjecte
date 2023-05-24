@@ -166,7 +166,7 @@ public class Nevera implements Serializable {
     }
 
 
-    public List<Nevera> retornaLlibresFitxerBinariEnLlista() throws FileNotFoundException, InterruptedException,ClassNotFoundException{
+    public List<Nevera> retornaLlibresFitxerBinariEnLlista() throws IOException, InterruptedException, ClassNotFoundException{
         Fitxers f=new Fitxers();
         List<Object>objs=f.retornaFitxerObjecteEnLlista(fitxerBin);
         List<Nevera>aliments=converteixALlibre(objs);

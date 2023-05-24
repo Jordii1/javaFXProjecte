@@ -2,11 +2,13 @@ package jordi.sanchez.javafxprojecte;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import pkgFitxers.Fitxers;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public class HelloController {
     //<editor-fold desc="Components FXML">
@@ -21,10 +23,6 @@ public class HelloController {
     @FXML
     private TextField TFDescripcio;
     @FXML
-    private TextField TFDataCaducitat;
-    @FXML
-    private Label LBError;
-    @FXML
     private Label LBNom;
     @FXML
     private Label LBPreu;
@@ -32,8 +30,9 @@ public class HelloController {
     private Label LBData;
     @FXML
     private Label LBDescripcio;
-    //</editor-fold>
-    // <editor-fold desc="Tab2">
+    @FXML
+    private DatePicker TFDataCaducitat;
+
     @FXML
     private TextField TFNomC;
     @FXML
@@ -41,9 +40,9 @@ public class HelloController {
     @FXML
     private TextField TFDescripcioC;
     @FXML
-    private TextField TFDataCaducitatC;
-    @FXML
     private Button BTCerca;
+    @FXML
+    private Label LBError;
     @FXML
     private Button BTTreure;
     @FXML
@@ -54,6 +53,9 @@ public class HelloController {
     private Label LBPreuT;
     @FXML
     private Label LBNomT;
+    @FXML
+    private DatePicker TFDataCaducitatC;
+
 
 
     //</editor-fold>
@@ -62,6 +64,7 @@ public class HelloController {
     static Fitxers f = new Fitxers();
     static List<Nevera> contingutFitxer;           // variable estàtica amb el contingut del fitxer
     static String dir = ".data";                     // no utilitzat el directori
+
 
 
     //    private void actualitzaPantalla() throws IOException, InterruptedException {
@@ -87,14 +90,13 @@ public class HelloController {
                 TFNom.getText().length() >= 1 &&
                         TFPreu.getText().length() >= 1 &&
                         TFDescripcio.getText().length() >= 1 &&
-                        TFDataCaducitat.getText().length() >= 1
-        ) {
+                        TFDataCaducitat.getValue().lengthOfMonth() >= 1) {
 
             // Agafem els camps dels TextFields
             String nom = TFNom.getText();
             int preu = Integer.parseInt(TFPreu.getText());
             String descripcio = TFDescripcio.getText();
-            String dataCaducitat = TFDataCaducitat.getText();
+            String dataCaducitat = String.valueOf(TFDataCaducitat.getValue().lengthOfMonth());
 
             // Construïm una persona amb aquests camps
             Nevera freez = new Nevera(nom, preu, descripcio, dataCaducitat);
@@ -129,7 +131,7 @@ public class HelloController {
         TFNom.setText("");
         TFPreu.setText("");
         TFDescripcio.setText("");
-        TFDataCaducitat.setText("");
+        TFDataCaducitat.getValue();
 
         TFNom.setDisable(false);
 
@@ -169,7 +171,7 @@ public class HelloController {
             TFNomC.setText(freez.getNom());
             TFPreuC.setText(String.valueOf(freez.getPreu()));
             TFDescripcioC.setText(freez.getDescripcio());
-            TFDataCaducitatC.setText(freez.getDataCaducitat());
+            TFDataCaducitatC.getValue();
 
             TFNom.setDisable(true);
         }
@@ -189,6 +191,15 @@ public class HelloController {
             netejaCamps();
             LBError.setText("Aquesta persona ha sigut eliminada");
         }
+    }
+
+    public void initialize() {
+
+        // Càrrega del fitxer CSS
+        String cssFile = Objects.requireNonNull(getClass().getResource("label.css")).toExternalForm();
+        Scene scene = TFDataCaducitat.getScene();
+        scene.getStylesheets().add(cssFile);
+
     }
 
 //    public void eliminaPersona() throws IOException, InterruptedException {

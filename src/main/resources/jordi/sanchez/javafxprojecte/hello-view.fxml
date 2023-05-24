@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
@@ -23,11 +24,11 @@
                         <TextField fx:id="TFNom" layoutX="344.0" layoutY="49.0" />
                         <TextField fx:id="TFPreu" layoutX="346.0" layoutY="114.0" />
                         <TextField fx:id="TFDescripcio" layoutX="344.0" layoutY="181.0" />
-                        <TextField fx:id="TFDataCaducitat" layoutX="344.0" layoutY="243.0" />
                         <Label fx:id="LBNom" layoutX="40.0" layoutY="118.0" text="Label" />
                         <Label fx:id="LBPreu" layoutX="40.0" layoutY="152.0" text="Label" />
                         <Label fx:id="LBData" layoutX="40.0" layoutY="255.0" text="Label" />
                         <Label fx:id="LBDescripcio" layoutX="40.0" layoutY="208.0" text="Label" />
+                  <DatePicker fx:id="TFDataCaducitat" layoutX="330.0" layoutY="251.0" />
                     </children></AnchorPane>
             </content>
         </Tab>
@@ -43,7 +44,6 @@
                         <TextField fx:id="TFNomC" layoutX="358.0" layoutY="52.0" />
                         <TextField fx:id="TFPreuC" layoutX="358.0" layoutY="108.0" />
                         <TextField fx:id="TFDescripcioC" layoutX="358.0" layoutY="156.0" />
-                        <TextField fx:id="TFDataCaducitatC" layoutX="359.0" layoutY="216.0" />
                         <Button fx:id="BTCerca" layoutX="407.0" layoutY="275.0" mnemonicParsing="false" onAction="#cerca" text="Cerca" />
                         <Label fx:id="LBError" layoutX="420.0" layoutY="322.0" text="Label" />
                         <Button fx:id="BTTreure" layoutX="115.0" layoutY="275.0" mnemonicParsing="false" onAction="#eliminar" text="Treure" />
@@ -51,6 +51,7 @@
                         <Label fx:id="LBDescripcioT" layoutX="60.0" layoutY="160.0" text="Label" />
                         <Label fx:id="LBPreuT" layoutX="60.0" layoutY="112.0" text="Label" />
                         <Label fx:id="LBNomT" layoutX="60.0" layoutY="56.0" text="Label" />
+                  <DatePicker fx:id="TFDataCaducitatC" layoutX="345.0" layoutY="225.0" />
                     </children></AnchorPane>
             </content>
         </Tab>
