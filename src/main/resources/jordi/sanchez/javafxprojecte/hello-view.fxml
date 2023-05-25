@@ -28,7 +28,7 @@
                         <Label fx:id="LBPreu" layoutX="40.0" layoutY="152.0" text="Label" />
                         <Label fx:id="LBData" layoutX="40.0" layoutY="255.0" text="Label" />
                         <Label fx:id="LBDescripcio" layoutX="40.0" layoutY="208.0" text="Label" />
-                  <DatePicker fx:id="TFDataCaducitat" layoutX="330.0" layoutY="251.0" />
+                  <DatePicker fx:id="TFDataCaducitat" layoutX="330.0" layoutY="251.0" style="-fx-background-color: #FF69B4;" stylesheets="@../../../../../label.css" />
                     </children></AnchorPane>
             </content>
         </Tab>

@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import pkgFitxers.Fitxers;
 
 import java.io.IOException;
@@ -193,14 +195,27 @@ public class HelloController {
         }
     }
 
-    public void initialize() {
+    public void start(Stage primaryStage) {
+        DatePicker datePicker = new DatePicker();
+        datePicker.getStylesheets().add(getClass().getResource("label.css").toExternalForm());
 
-        // Càrrega del fitxer CSS
-        String cssFile = Objects.requireNonNull(getClass().getResource("label.css")).toExternalForm();
-        Scene scene = TFDataCaducitat.getScene();
-        scene.getStylesheets().add(cssFile);
+        VBox root = new VBox(datePicker);
+        Scene scene = new Scene(root, 400, 300);
 
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
+
+
+
+//    public void initialize() {
+//
+//        // Càrrega del fitxer CSS
+//        String cssFile = Objects.requireNonNull(getClass().getResource("label.css")).toExternalForm();
+//        Scene scene = TFDataCaducitat.getScene();
+//        scene.getStylesheets().add(cssFile);
+//
+//    }
 
 //    public void eliminaPersona() throws IOException, InterruptedException {
 //        LBError.setText("");

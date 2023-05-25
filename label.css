@@ -1,12 +1,30 @@
-.label-as-textarea {
-    -fx-border-color: lightgray;
-    -fx-border-width: 1px;
-    -fx-padding: 4px;
-    -fx-background-color: white;
-    -fx-font-family: Arial;
-    -fx-font-size: 14px;
-    -fx-text-fill: black;
-    -fx-pref-height: 100px; /* Altura deseada */
-    -fx-pref-width: 200px; /* Ancho deseado */
-    -fx-wrap-text: true; /* Habilita el ajuste automático de texto a las dimensiones */
+.date-picker {
+    -fx-skin: "com.sun.javafx.scene.control.skin.DatePickerSkin";
+    -fx-popup-control-full-background: #FFFFFF; /* Color de fondo del campo */
+    -fx-background-color: transparent; /* Color de fondo transparente */
+    -fx-padding: 0.25em 0.583em 0.25em 0.583em; /* Espaciado interno */
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent; /* Color de fondo transparente */
+    -fx-background-radius: 0; /* Borde del campo */
+    -fx-padding: 0.333em 0.583em 0.333em 0.583em; /* Espaciado interno */
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent; /* Color de fondo transparente */
+    -fx-background-radius: 0; /* Borde del botón */
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: #DC143C; /* Color de la flecha */
+    -fx-padding: 0.583em; /* Espaciado interno */
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: #FF69B4; /* Color de fondo al pasar el ratón */
+}
+
+.date-picker .arrow-button:pressed {
+    -fx-background-color: #FFD700; /* Color de fondo al presionar el botón */
 }
